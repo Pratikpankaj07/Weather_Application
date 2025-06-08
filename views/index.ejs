@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+</head>
+<link rel="stylesheet" href="/css/styles.css">
+<body>
+
+<div class="container">
+    <div class="search">
+        <form action="/submit" method="post">
+        <input type="text" class="inp" name="place" placeholder="Enter Your Location">
+        <button type="submit" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+          </svg></button>
+        </form>
+    </div>
+    <div class="weather">
+        <%if(locals.weather &&locals.place){%>
+            <p><%=place%></p>
+            <img src="./assets/<%=weather%>.png" height="130px">
+        <%}else{%>
+            <img src="./assets/404.png" height="200px">
+        <%}%>
+    </div>
+    <div class="temp">
+        <%if(locals.temp && locals.description){%>
+            <p><%=temp%><sup>°C</sup></p>
+            <p><%=description%></p>
+        <%}%>
+    </div>
+    <div class="humidity">
+        <%if(locals.humidity){%>
+            
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: black;" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16">
+            <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"/>
+          </svg>
+        
+        
+            <p><%=humidity%>%</p>
+        
+        <%}%>
+          
+    </div>
+    <div class="wind">
+        <%if(locals.wind){%>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="color: black;" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+            <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5m-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2M0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5"/>
+          </svg>
+          
+            <p><%=wind%><span>m/s</span></p>
+        <%}%>
+    
+</div>
+    
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="app.js" charset="UTF-8"></script>
+</body>
+</html>

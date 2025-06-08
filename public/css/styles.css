@@ -1,0 +1,91 @@
+body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/assets/sky-background.avif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    
+}
+
+
+
+.container{
+    height:550px;
+    width:600px;
+    background: radial-gradient(circle, #7fb2e9, #86e9e9);
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+.search{
+    display: flex;
+    grid-area: 1/1/2/3;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+
+}
+.weather{
+    grid-area: 2/1/3/3;
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    
+}
+.temp{
+    grid-area:3/1/4/3;
+    align-self: center;
+    justify-self: center;
+    font-size: 30px;
+    color:white;
+    text-align: center;
+
+    
+}
+
+.humidity{
+    grid-area: 4/1/5/2;
+    align-self: center;
+    justify-self: center;
+    font-size: 25px;
+    color:white;
+    text-align: center;
+   
+}
+.wind{
+    grid-area:4/2/5/3;
+    align-self: center;
+    justify-self: center;
+    font-size: 25px;
+    color:white;
+    text-align: center;
+}
+
+input[type="text"]{
+    width: 500px;
+    height: 40px;
+    border-style: none;
+    border-radius: 30px;
+    background-color: #e6f5fb;
+}
+
+button{
+    height:40px;
+    width:40px;
+    border-style: none;
+    border-radius: 50%;
+    background-color: #e6f5fb;
+}
+.wind>p{
+    word-spacing: 5px;
+}

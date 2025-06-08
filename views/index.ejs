@@ -20,9 +20,9 @@
     <div class="weather">
         <%if(locals.weather &&locals.place){%>
             <p><%=place%></p>
-            <img src="./assets/<%=weather%>.png" height="130px">
+            <img src="/assets/<%=weather%>.png" height="130px">
         <%}else{%>
-            <img src="./assets/404.png" height="200px">
+            <img src="/assets/404.png" height="200px">
         <%}%>
     </div>
     <div class="temp">
@@ -58,6 +58,5 @@
 	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="app.js" charset="UTF-8"></script>
 </body>
 </html>
